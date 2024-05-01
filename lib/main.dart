@@ -16,6 +16,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Ecommerce Application',
       theme: ThemeData(
+        inputDecorationTheme: const InputDecorationTheme(
+          floatingLabelAlignment: FloatingLabelAlignment.start,
+          floatingLabelBehavior: FloatingLabelBehavior.auto,
+          hintStyle: TextStyle(fontSize: 16),
+          errorStyle: TextStyle(fontSize: 16),
+          labelStyle: TextStyle(fontSize: 16),
+          counterStyle: TextStyle(fontSize: 14),
+        ),
         //Setting Font Family for complete app
         fontFamily: GoogleFonts.roboto().fontFamily,
         // This is the theme of your application.

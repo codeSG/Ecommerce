@@ -1,5 +1,9 @@
+import 'package:ecommerce/common_widgets/custom_button.dart';
+import 'package:ecommerce/views/screens/signup_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+
+import '../../constants/color.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -59,14 +63,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   text: TextSpan(
                     children: [
                       const TextSpan(
-                        text: 'Already have an account? ',
+                        text: 'Don\'t have an account? ',
                         style: TextStyle(color: Colors.black),
                       ),
                       TextSpan(
-                        text: 'Login',
-                        style: const TextStyle(color: Colors.blue),
+                        text: 'Sign Up',
+                        style: const TextStyle(color: primaryColor),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const SignUpScreen(),
+                            ));
                             // Navigate to the login page
                           },
                       ),
@@ -91,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     const Text("Remember me")
                   ],
                 ),
-                ElevatedButton(onPressed: () {}, child: const Text("Submit"))
+                CustomButton(onTap: () {}, title: "Submit")
               ],
             ),
           ),
